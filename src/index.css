@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-mono: "JetBrains Mono", monospace;
+  --color-terminal-bg: #000000;
+  --color-terminal-green: #00ff00;
+  --color-terminal-red: #ff0000;
+  --color-terminal-dim: #004400;
+}
+
+body {
+  background-color: var(--color-terminal-bg);
+  color: var(--color-terminal-green);
+  font-family: var(--font-mono);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-terminal-bg);
+  border-left: 1px solid var(--color-terminal-green);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-terminal-green);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00cc00;
+}
+
+.terminal-border {
+  border: 2px solid var(--color-terminal-green);
+}
+
+.terminal-border-red {
+  border: 2px solid var(--color-terminal-red);
+}
+
+.terminal-input {
+  background: transparent;
+  border: 1px solid var(--color-terminal-green);
+  color: var(--color-terminal-green);
+  outline: none;
+}
+
+.terminal-input:focus {
+  box-shadow: 0 0 5px var(--color-terminal-green);
+}
+
+.terminal-button {
+  background: transparent;
+  border: 2px solid var(--color-terminal-green);
+  color: var(--color-terminal-green);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.terminal-button:hover {
+  background: var(--color-terminal-green);
+  color: var(--color-terminal-bg);
+}
+
+.terminal-button-red {
+  background: transparent;
+  border: 2px solid var(--color-terminal-red);
+  color: var(--color-terminal-red);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.terminal-button-red:hover {
+  background: var(--color-terminal-red);
+  color: var(--color-terminal-bg);
+}
+
+.scanline {
+  width: 100%;
+  height: 100px;
+  z-index: 9999;
+  position: absolute;
+  pointer-events: none;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 255, 0, 0.2) 50%, rgba(0, 0, 0, 0) 100%);
+  opacity: 0.1;
+  animation: scanline 10s linear infinite;
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(-100vh);
+  }
+
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+/* 3D Transform Utilities for Flashcards */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}

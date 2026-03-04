@@ -1,0 +1,5 @@
+{
+  "name": "prepmate",
+  "description": "Retro terminal UI app for generating quizzes, flashcards, and notes.",
+  "requestFramePermissions": []
+}
